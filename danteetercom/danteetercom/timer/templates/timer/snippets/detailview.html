@@ -1,0 +1,15 @@
+<!-- ====== BUTTONS ======== -->
+
+  <!-- BACK -->
+  <a href="{% url "timer:listview" %}"><div id="fixed_bottom_back_button" class="ui button"><<</div></a>
+
+  <!-- EDIT or SAVE -->
+  <a href="{% url "timer:updateview" pk=object.id %}"><div id="fixed_bottom_button" class="ui button">Edit</div></a>
+
+  <!-- DELETE -->
+  <a class="item" href="{% url "timer:deleteview" pk=object.id %}">
+    <form action="{% url 'timer:deleteview' pk=object.id %}" method="POST">
+      {% csrf_token %}
+      <input class="ui button" id="fixed_bottom_delete_button" type="submit" value="Delete" onclick="return deleteItem()"/>
+    </form>
+  </a>

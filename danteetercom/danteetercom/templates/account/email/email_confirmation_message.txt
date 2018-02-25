@@ -1,0 +1,11 @@
+{% load account %}{% load i18n %}{% autoescape off %}
+{% blocktrans %}Hello from KVA Alumni Association!
+
+You're receiving this e-mail because someone tried to create an account with your email address.
+To confirm, click the activation link below.
+
+Activation Link: {{ activate_url }}
+{% endblocktrans %}{% endautoescape %}
+
+{% blocktrans %}Thank you!
+KVA Alumni Association{% endblocktrans %}

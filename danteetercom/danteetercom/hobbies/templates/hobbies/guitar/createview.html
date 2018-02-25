@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}KVA | To Do {% endblock %}
+
+<!-- ====== TITLE ========================================= -->
+{% block header %}
+  <h1>New</h1>
+{% endblock %}
+
+<!-- ====== CONTENT ========================================= -->
+
+{% block content %}
+
+{% if form.errors %}
+  {{ form.errors }}
+{% endif %}
+
+
+<form class="ui form" action="" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+
+    <!-- CRISPY FORM -->
+    <div class="row">
+        {{ form|crispy }}
+    </div>
+    <br>
+
+    <!-- BUTTON -->
+    {% include "hobbies/guitar/snippets/createview.html" %}
+
+</form>
+
+
+{% endblock %}

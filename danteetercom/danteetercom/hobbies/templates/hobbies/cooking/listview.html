@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Cooking{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+
+  <h1>Cooking</h1>
+
+<br><br>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "hobbies/cooking/snippets/listview.html" %}
+
+<div class="ui grid">
+  <div class="ui mobile only row">
+
+  <table class="ui very basic compact table">
+
+      <tr>
+        <th>Recipe</th>
+      </tr>
+
+    {% for obj in object_list %}
+
+        <tr>
+          <td><a class="table_left_column" href="{% url "hobbies:cooking_detailview" pk=obj.id %}">{{ obj.title }}</a>
+        </tr>
+    {% endfor %}
+    <!-- </tbody> -->
+  </table>
+</div>
+
+
+<!-- MOBILE ONLY  -->
+<div class="ui computer tablet only row">
+    <table class="ui very basic compact computer tablet only table">
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr>
+          <th>Recipe</th>
+          <th>Meat</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td><a class="table_left_column" href="{% url "hobbies:cooking_detailview" pk=obj.id %}">{{ obj.title }}</a></td>
+            <td>{{ obj.meat }}</td>
+            <td><a href="{{ obj.URL_link }}" target="_blank">Link</a></td>
+            <td style="text-align: right;">
+
+              <!-- EDIT BUTTON -->
+              <a class="ui edit button" id="table_button" href="{% url "hobbies:cooking_updateview" pk=obj.id %}">Edit</a>
+
+              <!-- DELETE BUTTON -->
+              <a class="ui item" id="same_line" href="{% url "hobbies:cooking_deleteview" pk=obj.id %}">
+              <form action="{% url 'hobbies:cooking_deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui delete button" type="submit" value="&#x2714;" onclick="return deleteItem()"/>
+              </form>
+
+            </td>
+          </tr>
+
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<br>
+
+  <!-- ==== STYLE ================ -->
+  <style>
+
+    #right_attached {
+      background-color: #5d2d7f;
+      position: fixed !important;
+      height: 60px;
+      padding-top: 20px;
+      /* width: 100%; */
+      right: -5px;
+      left: 0px;
+      bottom: 0px;
+      z-index:2000;
+      border-radius: 0px !important;
+    }
+
+  </style>
+
+{% endblock %}

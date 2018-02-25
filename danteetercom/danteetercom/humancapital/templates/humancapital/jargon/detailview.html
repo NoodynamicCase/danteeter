@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.word_or_phrase }}</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- ===== TABLE ======== -->
+
+<table class="ui very basic celled table">
+
+  <!-- BASIC INFO -->
+  <tbody  class="gray_row_spacer">
+    <tr><td class="horizontal_table">Related Topic</td><td>{{ object.relates_to }}</td></tr>
+    <tr><td class="horizontal_table">Definition</td><td>{{ object.definition }}</td></tr>
+  </tbody>
+
+</table>
+
+  <br>
+
+<!-- ===== EDIT & DELETE BUTTONS ====== -->
+  <div class="row">
+
+      <a class="item" href="{% url "humancapital:jargon_updateview" pk=object.id %}"><div class="ui massive green button">Edit</div></a><br><br>
+            <a class="item" href="{% url "humancapital:jargon_deleteview" pk=object.id %}">
+        <form action="{% url 'humancapital:jargon_deleteview' pk=object.id %}" method="POST">
+          {% csrf_token %}
+          <input class="ui massive red button" type="submit" value="Delete" onclick="return deleteItem()"/>
+        </form>
+      </a>
+
+  </div>
+
+<!-- ========================================== -->
+
+{% endblock %}

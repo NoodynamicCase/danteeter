@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Shopping{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+
+  <h1>Wish List</h1>
+
+<br>
+<br>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "shopping/snippets/listview.html" %}
+
+<!-- ========================= BUY ==================================== -->
+
+<div class="ui grid">
+  <div class="ui mobile only row">
+
+  <table class="ui very basic compact table">
+
+      <tr>
+        <th>Item</th>
+      </tr>
+
+    {% for obj in object_list %}
+
+        <tr>
+          <td><a class="table_left_column" href="{% url "shopping:detailview" pk=obj.id %}">{{ obj.item }}</a>
+
+          <!-- DELETE BUTTON -->
+
+            <a class="ui item" id="same_line" style="position: absolute; right: 10px !important;" href="{% url "shopping:deleteview" pk=obj.id %}">
+            <form action="{% url 'shopping:deleteview' pk=obj.id %}" method="POST">
+              {% csrf_token %}
+              <input class="ui tiny delete button" type="submit" value="&#x2714;" onclick="return deleteItem()"/>
+            </form>
+          </td>
+        </tr>
+    {% endfor %}
+    <!-- </tbody> -->
+  </table>
+</div>
+
+
+<!-- MOBILE ONLY  -->
+<div class="ui computer tablet only row">
+    <table class="ui very basic compact computer tablet only table">
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th></th>
+          <th id="button_column"></th>
+          <!-- <th id="button_column"></th> -->
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td><a class="table_left_column" href="{% url "shopping:detailview" pk=obj.id %}">{{ obj.item }}</a></td>
+            <td>{{ obj.recipient }}</td>
+            <td style="text-align: right;">
+
+              <!-- EDIT BUTTON -->
+              <a class="ui edit button" id="table_button" href="{% url "shopping:updateview" pk=obj.id %}">Edit</a>
+
+              <!-- DELETE BUTTON -->
+              <a class="ui item" id="same_line" href="{% url "shopping:deleteview" pk=obj.id %}">
+              <form action="{% url 'shopping:deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui delete button" type="submit" value="&#x2714;" onclick="return deleteItem()"/>
+              </form>
+
+            </td>
+          </tr>
+
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<br>
+
+
+  <!-- ==== STYLE ================ -->
+
+{% endblock %}

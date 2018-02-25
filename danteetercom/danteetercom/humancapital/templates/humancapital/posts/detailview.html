@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.post_title }}</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- ===== TABLE ======== -->
+
+<table class="ui very basic celled table">
+
+  <tbody>
+    <tr><td class="horizontal_table">Author</td><td>{{ object.user.first_name }} {{ object.user.last_name }}</td></tr>
+    <tr><td class="horizontal_table">Topic</td><td>{{ object.post_topic }}</td></tr>
+    <tr><td class="horizontal_table">Post</td><td>{{ object.post }}</td></tr>
+    <tr><td class="horizontal_table">Sources Type</td><td>{{ object.sources }}</td></tr>
+    <tr><td class="horizontal_table">Files</td><td>{{ object.upload_file }}</td></tr>
+    <tr><td class="horizontal_table">Complete?</td><td>{{ object.complete }}</td></tr>
+
+    <!-- TIMESTAMP -->
+    <tr><td class="horizontal_table">Added</td><td>{{ object.timestamp_added }}</td></tr
+    <tr><td class="horizontal_table">Last Updated</td><td>{{ object.timestamp_updated }}</td></tr>
+  </tbody>
+
+</table>
+
+  <br>
+
+<!-- ===== EDIT & DELETE BUTTONS ====== -->
+  <div class="row">
+
+      <a class="item" href="{% url "humancapital:posts_updateview" pk=object.id %}"><div class="ui massive green button">Edit</div></a><br><br>
+            <a class="item" href="{% url "humancapital:posts_deleteview" pk=object.id %}">
+        <form action="{% url 'humancapital:posts_deleteview' pk=object.id %}" method="POST">
+          {% csrf_token %}
+          <input class="ui massive red button" type="submit" value="Delete" onclick="return deleteItem()"/>
+        </form>
+      </a>
+
+  </div>
+
+<!-- ========================================== -->
+
+
+{% endblock %}

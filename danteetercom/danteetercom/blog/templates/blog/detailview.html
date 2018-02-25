@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Blog{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.post_title }}</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!--  BUTTONS ======== -->
+{% include "snippets/detailview.html" %}
+
+<!-- ===== TABLE ======== -->
+
+<table class="ui very basic celled table">
+
+  <!-- BASIC INFO -->
+  <tbody >
+    <tr><td class="horizontal_table">Entry</td><td>{{ object.post_entry }}</td></tr>
+    <tr><td class="horizontal_table">Category</td><td>{{ object.post_category }}</td></tr>
+    <tr><td class="horizontal_table">Audience</td><td>{{ object.public_private }}</td></tr>
+    <tr><td class="horizontal_table">Last Updated</td><td>{{ object.timestamp_updated }}</td></tr>
+  </tbody>
+
+</table>
+
+  <br>
+
+<!-- ========================================== -->
+
+{% endblock %}

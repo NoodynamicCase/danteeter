@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | To Do{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+
+  <h1>To Do List</h1>
+
+<br><br>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "to_do_list/tasks/snippets/listview.html" %}
+
+  <!-- ==================== TO DO LIST================================= -->
+  <h2>To Do</h2>
+  <div class="ui grid">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr class="computer only row">
+          <th>Task</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+        {% if obj.task_completed is False %}
+          <tr>
+            <td style="min-width: 300px;"><a class="table_left_column" href="{% url "to_do_list:tasks_detailview" pk=obj.id %}">{{ obj.task }}</a></td>
+            <td>{{ obj.task_urgency }} | {{ obj.task_importance }}</td>
+            <td>{{ obj.task_category }}</td>
+            <!-- EDIT BUTTON -->
+            <td><a class="ui teal button" href="{% url "to_do_list:tasks_updateview" pk=obj.id %}">Edit</a></td>
+            <!-- DELETE BUTTON -->
+            <td>
+              <a class="item" href="{% url "to_do_list:tasks_deleteview" pk=obj.id %}">
+              <form action="{% url 'to_do_list:tasks_deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui orange button" style="width: 100%" type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </td>
+          </tr>
+        {% endif %}
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+  <!-- ==================== FOLLOW_UP ================================= -->
+  <h2>Follow-up</h2>
+  <div class="ui grid">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr class="computer only row">
+          <th>Task</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+        {% if obj.task_followup is True %}
+          <tr>
+            <td style="min-width: 300px;"><a class="table_left_column" href="{% url "to_do_list:tasks_detailview" pk=obj.id %}">{{ obj.task }}</a></td>
+            <td>{{ obj.task_urgency }} | {{ obj.task_importance }}</td>
+            <td>{{ obj.task_category }}</td>
+            <!-- EDIT BUTTON -->
+            <td><a class="ui teal button" href="{% url "to_do_list:tasks_updateview" pk=obj.id %}">Edit</a></td>
+            <!-- DELETE BUTTON -->
+            <td>
+              <a class="item" href="{% url "to_do_list:tasks_deleteview" pk=obj.id %}">
+              <form action="{% url 'to_do_list:tasks_deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui orange button" style="width: 100%" type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </td>
+          </tr>
+        {% endif %}
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+  <!-- ==================== COMPLETED ================================= -->
+  <h2>Completed</h2>
+  <div class="ui grid">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr class="computer only row">
+          <th>Task</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+        {% if obj.task_completed is True and obj.task_followup is False %}
+          <tr>
+            <td style="min-width: 300px;"><a class="table_left_column" href="{% url "to_do_list:tasks_detailview" pk=obj.id %}">{{ obj.task }}</a></td>
+            <td>{{ obj.task_urgency }} | {{ obj.task_importance }}</td>
+            <td>{{ obj.task_category }}</td>
+            <!-- EDIT BUTTON -->
+            <td><a class="ui teal button" href="{% url "to_do_list:tasks_updateview" pk=obj.id %}">Edit</a></td>
+            <!-- DELETE BUTTON -->
+            <td>
+              <a class="item" href="{% url "to_do_list:tasks_deleteview" pk=obj.id %}">
+              <form action="{% url 'to_do_list:tasks_deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui orange button" style="width: 100%" type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </td>
+          </tr>
+        {% endif %}
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+  <!-- ==== STYLE ================ -->
+  <style>
+
+    td a{
+      width:100%;
+      display:block;
+    }
+
+    .table_left_column {
+      font-weight: bold;
+      font-size: 1.3em;
+      text-decoration: none !important;
+      /* padding: 10px;
+      border: 1px solid #009c95;
+      background-color:#009c95;
+      color: white; */
+    }
+
+    #right_attached {
+      background-color: #5d2d7f;
+      position: fixed !important;
+      height: 60px;
+      padding-top: 20px;
+      /* width: 100%; */
+      right: -5px;
+      left: 0px;
+      bottom: 0px;
+      z-index:2000;
+      border-radius: 0px !important;
+    }
+
+  </style>
+
+{% endblock %}

@@ -1,0 +1,2057 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}CSS Template{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>CSS Template</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<div class="demo container">
+
+  <h2 class="ui dividing header">
+    Elements
+  </h2>
+
+
+<!-- =========== DIVIDERS ================================================== -->
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/divider.html">Divider</a>
+    </h4>
+    <div class="ui center aligned segment">
+  <div class="ui button">A</div>
+  <div class="ui horizontal divider">and</div>
+  <div class="teal ui button">B</div>
+</div>
+
+<div class="ui two column stackable center aligned grid segment">
+  <div class="column">
+    <div class="ui button">A</div>
+  </div>
+  <div class="ui vertical divider">or</div>
+  <div class="column">
+    <div class="teal ui button">B</div>
+  </div>
+</div>
+
+<div class="ui horizontal divider">
+  <i class="heart icon"></i>
+</div>
+
+<h5 class="ui horizontal header divider">
+  <i class="bar chart icon"></i>
+  Specifications
+</h5>
+
+<div class="ui inverted segment">
+  <p>A</p>
+  <div class="ui inverted divider"></div>
+  <p>B</p>
+</div>
+  </div>
+
+
+<!-- =========== HEADERS ================================================== -->
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/header.html">Header</a>
+    </h4>
+    <div class="ui two column grid">
+
+  <div class="column">
+    <h1 class="ui header">H1</h1>
+    <h2 class="ui header">H2</h2>
+    <h3 class="ui header">H3</h3>
+    <h4 class="ui header">H4</h4>
+    <h5 class="ui header">H5</h5>
+
+    <div class="ui icon header">
+      <i class="settings icon"></i>
+      <div class="content">
+        Icon Header
+        <div class="sub header">Sub-header</div>
+      </div>
+    </div>
+
+    <div class="ui header">
+      <i class="settings icon"></i>
+      <div class="content">
+        Header
+        <div class="sub header">Sub-header</div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui block header">
+      <i class="settings icon"></i>
+      <div class="content">
+        Block
+        <div class="sub header">Sub-header</div>
+      </div>
+    </div>
+
+    <div class="ui dividing header">
+      <i class="settings icon"></i>
+      <div class="content">
+        Dividing
+        <div class="sub header">Sub-header</div>
+      </div>
+    </div>
+
+    <div class="ui teal dividing header">
+      <i class="settings icon"></i>
+      <div class="content">
+        Color
+        <div class="sub header">Sub-header</div>
+      </div>
+    </div>
+
+    <div class="ui top attached header">Attached</div>
+    <div class="ui attached segment"></div>
+    <div class="ui bottom attached header">Attached</div>
+  </div>
+</div>
+  </div>
+
+
+<!-- =========== ICONS ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/icon.html">Icon</a>
+    </h4>
+    <div class="demo icons">
+  <i class="search icon"></i>
+  <i class="mail outline icon"></i>
+  <i class="external link icon"></i>
+  <i class="wifi icon"></i>
+  <i class="setting icon"></i>
+  <i class="home icon"></i>
+  <i class="inbox icon"></i>
+  <i class="browser icon"></i>
+  <i class="tag icon"></i>
+  <i class="tags icon"></i>
+  <i class="calendar icon"></i>
+  <i class="zip icon"></i>
+  <i class="dot circle outline icon"></i>
+  <i class="sliders icon"></i>
+  <i class="graduation icon"></i>
+  <i class="weixin icon"></i>
+</div>
+
+<div class="ui divider"></div>
+
+<i class="circular users icon"></i>
+<i class="circular inverted users icon"></i>
+<i class="circular settings icon"></i>
+<i class="circular settings icon"></i>
+<i class="bordered users icon"></i>
+<i class="bordered inverted black users icon"></i>
+<i class="spinner loading icon"></i>
+<i class="notched circle loading icon"></i>
+<i class="circular teal users icon"></i>
+<i class="circular inverted teal users icon"></i>
+<i class="bordered teal users icon"></i>
+<i class="bordered inverted teal users icon"></i>
+<i class="small settings icon"></i>
+<i class="settings icon"></i>
+<i class="large settings icon"></i>
+<i class="big settings icon"></i>
+<i class="huge settings icon"></i>
+<i class="massive settings icon"></i>
+
+<style type="text/css">
+.demo.icons .icon {
+  font-size: 16px;
+  margin: 0em 4px 8px;
+}
+</style>
+  </div>
+
+
+<!-- =========== Images ================================================== -->
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/image.html">Image</a>
+    </h4>
+    The partial "examples/image" was not found, as such it will not be rendered.
+  </div>
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/input.html">Input</a>
+    </h4>
+    <div class="ui action left icon input">
+  <i class="search icon"></i>
+  <input type="text" placeholder="Search...">
+  <div class="ui teal button">Search</div>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui corner labeled input">
+  <input type="text" placeholder="Required Field">
+  <div class="ui corner label">
+    <i class="asterisk icon"></i>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui labeled right icon input">
+  <div class="ui label">
+    http://
+  </div>
+  <input type="text" placeholder="domain.com">
+  <i class="add circle link icon"></i>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui labeled input">
+  <a class="ui label">
+    Label
+  </a>
+  <input type="text" placeholder="Placeholder...">
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui right labeled input">
+  <input type="text" placeholder="Placeholder...">
+  <a class="ui label">
+    Label
+  </a>
+</div>
+  </div>
+
+
+<!-- =========== LABELS ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/label.html">Label</a>
+    </h4>
+    <div class="ui image label">
+  <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  email@address.com
+  <i class="delete icon"></i>
+</div>
+<a class="ui teal image label">
+  Some Name
+  <span class="detail">Group</span>
+</a>
+<a class="ui label">
+  <i class="mail icon"></i> Icon
+</a>
+<a class="ui tag label">Tag</a>
+<div class="ui empty circular label"></div>
+<div class="ui black empty circular label"></div>
+<div class="ui teal empty circular label"></div>
+
+<div class="ui divider"></div>
+<form class="ui fluid form">
+  <div class="two fields">
+    <div class="field">
+      <input type="text" placeholder="First name">
+      <div class="ui pointing label">
+        Pointing Label
+      </div>
+    </div>
+    <div placeholder="Last Name" class="field">
+      <div class="ui pointing below label">
+        Pointing below label
+      </div>
+      <input type="text">
+    </div>
+  </div>
+</form>
+
+<div class="ui hidden divider"></div>
+<div class="ui two item menu">
+  <a class="item">
+    Item
+  </a>
+  <a class="item">
+    Item
+    <div class="floating ui teal label">141</div>
+  </a>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui left floated tiny image">
+  <a class="ui left red corner label">
+    <i class="heart icon"></i>
+  </a>
+  <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+</div>
+<div class="ui left floated tiny image">
+  <a class="ui left yellow corner label">
+    <i class="star icon"></i>
+  </a>
+  <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+</div>
+<div class="ui left floated tiny image">
+  <a class="ui right corner label">
+    <i class="close icon"></i>
+  </a>
+  <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+</div>
+
+<div class="ui hidden clearing divider"></div>
+<div class="ui segment" style="min-height: 8rem;">
+  <div class="ui top attached label">Top Labeled</div>
+  <div class="ui bottom attached label">Bottom Labeled</div>
+</div>
+<div class="ui segment" style="min-height: 8rem;">
+  <div class="ui top left attached label">Top Left</div>
+  <div class="ui top right attached label">Top Right</div>
+  <div class="ui bottom left attached label">Bottom Left</div>
+  <div class="ui bottom right attached label">Bottom Right</div>
+</div>
+<div style="min-height: 8rem;" class="ui segment">
+  <a class="ui ribbon label">Ribbon</a>
+</div>
+  </div>
+
+
+<p></p>
+<!-- ======== LISTS ===================================================   -->
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/list.html">List</a>
+    </h4>
+    <div class="ui two column relaxed stackable grid">
+  <div class="column">
+    <div class="ui list">
+      <div class="item">
+        <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+          <div class="list">
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+                <a class="header">Sub Header</a>
+                <div class="description">Sub Description</div>
+              </div>
+            </div>
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+                <a class="header">Sub Header</a>
+                <div class="description">Sub Description</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+          <div class="list">
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+                <a class="header">Sub Header</a>
+                <div class="description">Sub Description</div>
+              </div>
+            </div>
+            <div class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+                <a class="header">Sub Header</a>
+                <div class="description">Sub Description</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <i class="star icon"></i>
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+      <div class="item">
+        <i class="star icon"></i>
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+      <div class="item">
+        <i class="star icon"></i>
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+    </div>
+
+    <div class="ui divided very relaxed animated list">
+      <div class="item">
+        <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<!-- =========== LISTS ================================================== -->
+
+
+  <div class="column">
+    <div class="ui bulleted link list">
+      <a class="item">Link</a>
+      <a class="item">Link</a>
+      <a class="item">Link</a>
+      <a class="item">Link</a>
+      <a class="item">Link</a>
+    </div>
+
+    <div class="ui selection list">
+      <a class="item">Selection</a>
+      <a class="item">Selection</a>
+      <a class="item">Selection</a>
+      <a class="item">Selection</a>
+      <a class="item">Selection</a>
+    </div>
+
+    <div class="ui bulleted list">
+      <div class="item">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+        <div class="list">
+          <div class="item">
+            Sub-header
+          </div>
+          <div class="item">
+            Sub-header
+          </div>
+          <div class="item">
+            Sub-header
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">Header</div>
+          Description
+        </div>
+      </div>
+    </div>
+
+    <div class="ui ordered list">
+      <a class="item">Getting Started</a>
+      <a class="item">Introduction</a>
+      <div class="item">
+        <a>Languages</a>
+        <div class="list">
+          <a class="item">HTML</a>
+          <a class="item">Javascript</a>
+          <a class="item">CSS</a>
+        </div>
+      </div>
+      <a class="item">Review</a>
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui horizontal list">
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui divided relaxed horizontal list">
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui top aligned avatar image">
+    <div class="content">
+      <div class="header">Header</div>
+      Description
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui ordered horizontal list">
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui avatar image">
+    <div class="content">
+      <div class="header">Steve Jobes</div>
+      50 Points
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui avatar image">
+    <div class="content">
+      <div class="header">Stevie Feliciano</div>
+      44 Points
+    </div>
+  </div>
+  <div class="item">
+    <img src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png" class="ui avatar image">
+    <div class="content">
+      <div class="header">Jenny Hess</div>
+      11 Points
+    </div>
+  </div>
+</div>
+  </div>
+
+
+<p></p>
+
+<!-- =========== LOADERS ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/loader.html">Loader</a>
+    </h4>
+    <div class="ui four column stackable doubling grid">
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui mini loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui small loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui large loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class="ui four column stackable doubling grid">
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui mini text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui small text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui large text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class="ui four column stackable doubling grid">
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui mini loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui small loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active dimmer">
+        <div class="ui large loader"></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class="ui four column stackable doubling grid">
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui mini text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui small text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui large text loader">
+          Loading
+        </div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden clearing divider"></div>
+
+<div class="ui segment">
+  <div class="ui active inverted dimmer">
+    <div class="ui indeterminate text active loader">
+      Preparing...
+    </div>
+  </div>
+  <br><br>
+  <br><br>
+  <br><br>
+</div>
+
+<div class="ui segment">
+  <div class="ui active dimmer">
+    <div class="ui indeterminate active loader"></div>
+  </div>
+  <br><br>
+  <br><br>
+  <br><br>
+</div>
+
+  </div>
+
+
+<!-- =========== REVEAL ================================================== -->
+REVEAL</h1>
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/list.html">Reveal</a>
+    </h4>
+    <div class="ui slide down instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui slide up instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui slide left instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui slide right instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+
+<div class="ui move down masked instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui move up masked instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui move left masked instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui move right masked instant reveal">
+  <div class="visible content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+
+<div class="ui rotate left reveal">
+  <div class="visible content">
+    <img class="ui small bordered circular image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered circular image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+<div class="ui rotate reveal">
+  <div class="visible content">
+    <img class="ui small bordered circular image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/white-image.png">
+  </div>
+  <div class="hidden content">
+    <img class="ui small bordered circular image" src="https://cdn.rawgit.com/Semantic-Org/Semantic-UI/next/examples/images/wireframe/square-image.png">
+  </div>
+</div>
+
+  </div>
+
+
+<!-- =========== STEP COMPLETION ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/elements/step.html">Step</a>
+    </h4>
+    <div class="ui steps">
+  <a class="step">
+    <div class="content">
+      <div class="title">Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+  <a class="active step">
+    <div class="content">
+      <div class="title">Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui ordered vertical steps">
+  <a class="step">
+    <div class="content">
+      <div class="title">Previous Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+  <a class="active step">
+    <div class="content">
+      <div class="title">Active Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+  <a class="disabled step">
+    <div class="content">
+      <div class="title">Disabled Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+</div>
+
+<div class="ui hidden divider"></div>
+
+<div class="ui vertical steps">
+  <a class="completed step">
+    <i class="truck icon"></i>
+    <div class="content">
+      <div class="title">Previous Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+  <a class="active step">
+    <i class="payment icon"></i>
+    <div class="content">
+      <div class="title">Active Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+  <a class="disabled step">
+    <i class="info icon"></i>
+    <div class="content">
+      <div class="title">Disabled Step</div>
+      <div class="description">Description</div>
+    </div>
+  </a>
+</div>
+  </div>
+
+  <h2 class="ui dividing header">
+    Collections
+  <a class="anchor" id="collections"></a></h2>
+
+
+<!-- =========== BREAD CRUMBS ================================================== -->
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/collections/breadcrumb.html">Breadcrumb</a>
+    </h4>
+    <div class="ui large breadcrumb">
+  <a class="section">Home</a>
+  <div class="divider"> / </div>
+  <a class="section">Store</a>
+  <div class="divider"> / </div>
+  <div class="active section">T-Shirt</div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui large breadcrumb">
+  <a class="section">Home</a>
+  <i class="right chevron icon divider"></i>
+  <a class="section">Registration</a>
+  <i class="right chevron icon divider"></i>
+  <div class="active section">Personal Information</div>
+</div>
+  </div>
+
+
+
+<!-- =========== FORMS ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/collections/form.html">Form</a>
+    </h4>
+    <div class="ui form segment">
+  <div class="two fields">
+    <div class="field">
+      <label>Selection Dropdown</label>
+      <div class="ui selection dropdown" tabindex="0">
+        <div class="default text">Select</div>
+        <i class="dropdown icon"></i>
+        <input type="hidden" name="hidden-field">
+        <div class="menu" tabindex="-1">
+          <div data-value="1" class="item">Choice 1</div>
+          <div data-value="2" class="item">Choice 2</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>HTML Select</label>
+      <select>
+        <option value="">Select</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label>Text Area</label>
+    <textarea></textarea>
+  </div>
+  <div class="three required fields">
+    <div class="field">
+      <label>Required Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+    <div class="field">
+      <label>Required Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+    <div class="disabled field">
+      <label>Disabled Input</label>
+      <input type="text" disabled="disabled" placeholder="Text Input">
+    </div>
+  </div>
+  <div class="grouped fields">
+    <label>Radio Selection</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" checked="checked" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <div class="ui left icon input">
+      <i class="lock icon"></i>
+      <input type="password">
+    </div>
+  </div>
+  <div class="inline field">
+    <div class="ui checkbox">
+      <input type="checkbox">
+      <label>Checkbox</label>
+    </div>
+  </div>
+  <div class="grouped inline fields">
+    <label>Inline Radio Selection</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" checked="checked" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>Radio Option</label>
+      </div>
+    </div>
+  </div>
+  <div class="inline fields">
+    <div class="field">
+      <label>Multiple Inline Fields</label>
+      <input type="text" placeholder="(xxx)">
+    </div>
+    <div class="field">
+      <input type="text" placeholder="xxx">
+    </div>
+    <div class="field">
+      <input type="text" placeholder="xxxx">
+    </div>
+  </div>
+  <div class="inline field">
+    <label>Inline Field</label>
+    <input type="text" placeholder="Text Input">
+  </div>
+  <h4 class="ui header">Sub-header</h4>
+  <div class="field">
+    <div class="ui toggle checkbox">
+      <input type="radio" name="privacy">
+      <label>Toggle</label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="ui slider checkbox">
+      <input type="checkbox" name="top-posts">
+      <label>Option</label>
+    </div>
+  </div>
+  <div class="ui submit button">Submit</div>
+</div>
+
+<div class="ui warning form segment">
+  <div class="ui warning message">
+    <div class="header">Warning Message</div>
+    <ul class="list">
+      <li>Problem #1</li>
+      <li>Problem #2</li>
+    </ul>
+  </div>
+  <div class="two fields">
+    <div class="field">
+      <label>Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+    <div class="field">
+      <label>Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+  </div>
+  <div class="ui submit button">Submit</div>
+</div>
+<div class="ui error form segment">
+  <div class="ui error message">
+    <div class="header">Error Message</div>
+    <p>Error message long description</p>
+  </div>
+  <div class="two fields">
+    <div class="field error">
+      <label>Errored Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+    <div class="field error">
+      <label>Errored Input</label>
+      <input type="text" placeholder="Text Input">
+    </div>
+  </div>
+  <div class="ui submit button">Submit</div>
+</div>
+  </div>
+
+
+<!-- =========== GRIDS ================================================== -->
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/collections/grid.html">Grid</a>
+    </h4>
+    <div class="shaded grid examples">
+
+<div class="ui grid">
+  <div class="sixteen column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="fifteen column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="fourteen column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="thirteen column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="twelve column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="eleven column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="ten column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="nine column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="eight column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="seven column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="six column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="five column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="four column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="three column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="two column row">
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="one column row">
+    <div class="column"></div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="row">
+    <div class="one wide column"></div>
+    <div class="fifteen wide column"></div>
+  </div>
+  <div class="row">
+    <div class="two wide column"></div>
+    <div class="fourteen wide column"></div>
+  </div>
+  <div class="row">
+    <div class="three wide column"></div>
+    <div class="thirteen wide column"></div>
+  </div>
+  <div class="row">
+    <div class="four wide column"></div>
+    <div class="twelve wide column"></div>
+  </div>
+  <div class="row">
+    <div class="five wide column"></div>
+    <div class="eleven wide column"></div>
+  </div>
+  <div class="row">
+    <div class="six wide column"></div>
+    <div class="ten wide column"></div>
+  </div>
+  <div class="row">
+    <div class="seven wide column"></div>
+    <div class="nine wide column"></div>
+  </div>
+  <div class="row">
+    <div class="eight wide column"></div>
+    <div class="eight wide column"></div>
+  </div>
+  <div class="row">
+    <div class="nine wide column"></div>
+    <div class="seven wide column"></div>
+  </div>
+  <div class="row">
+    <div class="ten wide column"></div>
+    <div class="six wide column"></div>
+  </div>
+  <div class="row">
+    <div class="eleven wide column"></div>
+    <div class="five wide column"></div>
+  </div>
+  <div class="row">
+    <div class="twelve wide column"></div>
+    <div class="four wide column"></div>
+  </div>
+  <div class="row">
+    <div class="thirteen wide column"></div>
+    <div class="three wide column"></div>
+  </div>
+  <div class="row">
+    <div class="fourteen wide column"></div>
+    <div class="two wide column"></div>
+  </div>
+  <div class="row">
+    <div class="fifteen wide column"></div>
+    <div class="one wide column"></div>
+  </div>
+</div>
+
+<div class="ui relaxed grid">
+  <div class="eight column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="seven column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="six column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="five column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="four column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="three column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="two column row">
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="one column row">
+    <div class="column"></div>
+  </div>
+</div>
+
+<div class="ui very relaxed grid">
+  <div class="eight column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="seven column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="six column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="five column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="four column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="three column row">
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="two column row">
+    <div class="column"></div>
+    <div class="column"></div>
+  </div>
+  <div class="one column row">
+    <div class="column"></div>
+  </div>
+</div>
+<div class="ui clearing section divider"></div>
+
+<div class="responsive grid examples">
+  <div class="sixteen column row">
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column two wide large screen one wide widescreen"></div>
+  </div>
+</div>
+</div>
+
+<div class="ui clearing section divider"></div>
+
+<div class="nested grid examples">
+
+<div class="ui padded grid">
+  <div class="two column row">
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+  <div class="three column row">
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+  <div class="four column row">
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+  <div class="five column row">
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+  <div class="six column row">
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui two column grid">
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<style type="text/css">
+
+/* Shaded */
+.demo .grid.shaded.examples .row {
+  position: relative;
+}
+.demo .grid.shaded.examples .grid &gt; .column {
+  position: relative;
+  z-index: 11;
+}
+.demo .grid.shaded.examples .grid .column:not(.row):after {
+  background-color: #AAAAAA;
+  content: "";
+  display: block;
+  min-height: 1em;
+}
+
+.demo .grid.divided.examples .grid .column:not(.row):after {
+  background-color: rgba(0, 0, 0, 0.1);
+  content: "";
+  display: block;
+  min-height: 1em;
+}
+
+.demo .grid.nested.examples .grid .grid {
+  box-shadow: 0px 0px 0px 1px #F0F0F0 inset;
+}
+.demo .grid.nested.examples .grid .grid .column:after {
+  background-color: #AAAAAA;
+  content: "";
+  display: block;
+  min-height: 1em;
+}
+
+.demo .grid.simple.examples .grid .column:not(.row):not(.grid):after {
+  content: "";
+  display: block;
+  min-height: 50px;
+}
+
+
+/* Animation */
+.demo .grid.examples {
+  margin: 0em !important;
+  padding: 0em !important;
+}
+
+</style>
+  </div>
+
+
+
+
+
+
+
+<!-- =========== TABLES ================================================== -->
+
+
+
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/collections/table.html">Table</a>
+    </h4>
+    <table class="ui celled striped table">
+  <thead>
+    <tr><th colspan="3">
+      Files
+    </th>
+  </tr></thead><tbody>
+    <tr>
+      <td class="disabled">
+        <i class="folder icon"></i> folder
+      </td>
+      <td>Comment</td>
+      <td class="right aligned collapsing">10 hours ago</td>
+    </tr>
+    <tr>
+      <td>
+        <i class="folder icon"></i> folder2
+      </td>
+      <td>Comment</td>
+      <td class="right aligned">10 hours ago</td>
+    </tr>
+    <tr>
+      <td>
+        <i class="folder icon"></i> folder3
+      </td>
+      <td>Comment</td>
+      <td class="right aligned">10 hours ago</td>
+    </tr>
+    <tr>
+      <td class="collapsing">
+        <i class="file outline icon"></i> package.json
+      </td>
+      <td>Comment</td>
+      <td class="right aligned">10 hours ago</td>
+    </tr>
+    <tr>
+      <td>
+        <i class="file outline icon"></i> Gruntfile.js
+      </td>
+      <td>Comment</td>
+      <td class="right aligned">10 hours ago</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="ui definition table">
+  <thead>
+    <tr><th></th>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>Definition</td>
+      <td>1A</td>
+      <td>1B</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>2A</td>
+      <td>2B</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="ui compact celled definition table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Registration Date</th>
+      <th>E-mail address</th>
+      <th>Premium Plan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="collapsing">
+        <div class="ui fitted slider checkbox">
+          <input type="checkbox"> <label></label>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="collapsing">
+        <div class="ui fitted slider checkbox">
+          <input type="checkbox"> <label></label>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="collapsing">
+        <div class="ui fitted slider checkbox">
+          <input type="checkbox"> <label></label>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th></th>
+      <th colspan="4">
+        <div class="ui right floated small primary labeled icon button">
+          <i class="user icon"></i> Primary
+        </div>
+        <div class="ui small button">
+          Button
+        </div>
+        <div class="ui small disabled button">
+          Disabled
+        </div>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User 1</td>
+      <td>Value</td>
+      <td>Comment</td>
+    </tr>
+    <tr class="active">
+      <td>User 1</td>
+      <td>Selected</td>
+      <td>Data</td>
+    </tr>
+    <tr class="disabled">
+      <td>User 1</td>
+      <td>Value</td>
+      <td>Comment</td>
+    </tr>
+    <tr>
+      <td class="active">User 2</td>
+      <td>Value</td>
+      <td>Data</td>
+    </tr>
+    <tr>
+      <td>User 1</td>
+      <td>Value</td>
+      <td class="warning">
+        <i class="attention icon"></i>
+        Warning
+      </td>
+    </tr>
+    <tr>
+      <td>User 3</td>
+      <td>Value</td>
+      <td class="negative">Data</td>
+    </tr>
+    <tr>
+      <td>User 1</td>
+      <td>Value</td>
+      <td class="positive">
+
+      </td>
+    </tr>
+    <tr class="warning">
+      <td>User 2</td>
+      <td>
+        <i class="attention icon"></i>
+        Warning
+      </td>
+      <td>Data</td>
+    </tr>
+    <tr class="positive">
+      <td>User 2</td>
+      <td></td>
+      <td>Data</td>
+    </tr>
+    <tr class="negative">
+      <td>User 2</td>
+      <td>Value</td>
+      <td>Data</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="ui inverted teal celled striped table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User 1</td>
+      <td>Data</td>
+      <td>Data</td>
+    </tr>
+    <tr>
+      <td>User 3</td>
+      <td>Data</td>
+      <td>Data</td>
+    </tr>
+    <tr>
+      <td>User 2</td>
+      <td>Denied</td>
+      <td>Data</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Footer</th>
+      <th>Footer</th>
+      <th></th>
+    </tr>
+  </tfoot>
+</table>
+  </div>
+
+  <h2 class="ui dividing header">
+    Views
+  </h2>
+
+
+<!-- ======== CHECKBOX ===================================================   -->
+  <div class="example">
+    <h4 class="ui header">
+      <a href="https://www.semantic-ui.com/modules/checkbox.html">Checkbox</a>
+    </h4>
+    <div class="ui checkbox">
+  <input type="checkbox" name="fun">
+  <label>Checkbox</label>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui form">
+  <div class="inline fields">
+    <div class="field">
+      <div class="ui radio checkbox checked">
+        <input type="radio" checked="checked" name="fruit">
+        <label>A</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>B</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>C</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit">
+        <label>D</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui slider checkbox">
+  <input type="checkbox" name="newsletter">
+  <label>Slider</label>
+</div>
+
+<div class="ui hidden divider"></div>
+<div class="ui toggle checkbox">
+  <input type="checkbox" name="public">
+  <label>Toggle</label>
+</div>
+
+<script type="text/javascript">
+$(document)
+  .ready(function(){
+    $('.demo .ui.checkbox')
+      .checkbox()
+    ;
+  })
+;
+</script>
+  </div>
+
+
+
+{% endblock %}

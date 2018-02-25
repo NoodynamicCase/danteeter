@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}KVA | Shopping{% endblock %}
+
+<!-- ====== TITLE ========================================= -->
+{% block header %}
+  <h1>New</h1>
+{% endblock %}
+
+<!-- ====== CONTENT ========================================= -->
+
+{% block content %}
+
+{% if form.errors %}
+  {{ form.errors }}
+{% endif %}
+
+
+<form enctype="multipart/form-data" class="ui form" action="" method="POST">
+    {% csrf_token %}
+
+    <!-- CRISPY FORM -->
+    <div class="row">
+        {{ form|crispy }}
+    </div>
+    <br>
+
+    <!-- BUTTON -->
+    {% include "shopping/snippets/createview.html" %}
+
+</form>
+
+
+{% endblock %}

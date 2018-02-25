@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- ====== TITLE ========================================= -->
+{% block header %}
+  <h1>New</h1>
+{% endblock %}
+
+<!-- ====== CONTENT ========================================= -->
+
+{% block content %}
+
+{% if form.errors %}
+  {{ form.errors }}
+{% endif %}
+
+
+<form class="ui form" enctype="multipart/form-data" action="" method="POST">
+    {% csrf_token %}
+
+    <!-- CRISPY FORM -->
+    <div class="row">
+        {{ form|crispy }}
+    </div>
+    <br>
+
+    <!-- SUBMIT BUTTON  -->
+    <input class="ui massive fluid green button" type="submit" value="Save">
+
+</form>
+
+
+{% endblock %}

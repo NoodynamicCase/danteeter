@@ -1,0 +1,51 @@
+hobbies{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | To Do{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.song }}</h1>
+  <br>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!--  BUTTONS ======== -->
+{% include "hobbies/guitar/snippets/detailview.html" %}
+
+<!-- ===== TABLE ======== -->
+<div class="ui centered grid">
+
+  <table class="ui very basic celled collapsable table">
+
+    <!-- BASIC INFO -->
+    <tbody  class="gray_row_spacer">
+      <tr><td class="horizontal_table">Artist</td><td>{{ object.artist }}</td></tr>
+      <tr><td class="horizontal_table">Genre</td><td>{{ object.genre }}</td></tr>
+      <tr><td class="horizontal_table">My Set?</td><td>{{ object.my_set }}</td></tr
+      <tr><td class="horizontal_table">Rating</td><td>{{ object.rating }}</td></tr>
+      <!-- URL -->
+      <tr>
+        <td class="horizontal_table">URL(s)</td>
+        <td>
+            <a href="{{ object.url_lyrics }}" target="_blank">Lyrics</a> |
+          <a href="{{ object.url_link_1 }}" target="_blank">Link 1</a> |
+          <a href="{{ object.url_link_2 }}" target="_blank">Link 2</a></td>
+      <tr><td class="horizontal_table">File(s)</td><td>{{ object.file_1 }}<br>{{ object.file_2 }}</td></tr>
+      <tr><td class="horizontal_table">Last Updated</td><td>{{ object.timestamp_updated }}</td></tr>
+    </tbody>
+  </table>
+
+      <div>
+        <p>{{ object.tab }}</p>
+      </div>
+
+  <br>
+
+</div>
+
+<!-- ========================================== -->
+
+{% endblock %}

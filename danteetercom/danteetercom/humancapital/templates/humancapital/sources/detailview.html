@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.source_title }}</h1>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- ===== TABLE ======== -->
+
+<table class="ui very basic celled table" style="border-top: 1px solid #ededed; border-radius: 0px;">
+
+  <!-- BASIC INFO -->
+  <tbody class="gray_row_spacer">
+    <!-- <tr><td class="horizontal_table">Title</td><td><b>{{ object.source_title }}</b></td></tr> -->
+    <tr><td class="horizontal_table">Notes</td><td>{{ object.notes }}</td></tr>
+    <tr><td class="horizontal_table">Topic</td><td>{{ object.topic }}</td></tr>
+    <tr><td class="horizontal_table">Author(s)</td><td>{{ object.authors }}</td></tr>
+    <tr><td class="horizontal_table">Link(s)</td>
+      <td>
+        {% if object.url_link_1 is not Blank %}<a href="{{ object.url_link_1 }}" target="_blank">{{ object.url_link_1 }}</a><br>{% endif %}
+        {% if object.url_link_2 is not Blank %}<a href="{{ object.url_link_2 }}" target="_blank">{{ object.url_link_2 }}</a><br>{% endif %}
+        {% if object.url_link_3 is not Blank %}<a href="{{ object.url_link_3 }}" target="_blank">{{ object.url_link_3 }}</a>{% endif %}
+      </td>
+    </tr>
+    <tr><td class="horizontal_table">File(s)</td>
+      <td>
+        {% if object.upload_file_1 is not Blank %}<a href="{{ object.upload_file_1.url }}" target="_blank">{{ object.upload_file_1 }}</a><br>{% endif %}
+        {% if object.upload_file_2 is not Blank %}<a href="{{ object.upload_file_2.url }}" target="_blank">{{ object.upload_file_2 }}</a><br>{% endif %}
+        {% if object.upload_file_3 is not Blank %}<a href="{{ object.upload_file_3.url }}" target="_blank">{{ object.upload_file_3 }}</a>{% endif %}
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+  <br>
+
+<!-- ===== EDIT & DELETE BUTTONS ====== -->
+  <div class="row">
+
+      <a class="item" href="{% url "humancapital:sources_updateview" pk=object.id %}"><div class="ui massive green button">Edit</div></a><br><br>
+            <a class="item" href="{% url "humancapital:sources_deleteview" pk=object.id %}">
+        <form action="{% url 'humancapital:sources_deleteview' pk=object.id %}" method="POST">
+          {% csrf_token %}
+          <input class="ui massive red button" type="submit" value="Delete" onclick="return deleteItem()"/>
+        </form>
+      </a>
+
+  </div>
+
+<!-- ========================================== -->
+  <style>
+
+    .horizontal_table{
+      font-weight: bold;
+      font-size: 1.1em;
+      vertical-align: top;
+      /* text-indent: 15px; */
+    }
+
+    .gray_row_spacer{
+      /* background-color: #E5E5E5E5 !important; */
+    }
+
+  </style>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Guitar{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+
+  <h1>Song List</h1>
+
+<br><br>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "hobbies/guitar/snippets/listview.html" %}
+
+  <!-- SHOPPING LIST -->
+  <div class="ui centered grid">
+    <table class="ui very basic compact collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr class="computer only row">
+          <th>Artist</th>
+          <th>Song</th>
+          <th>My Set</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td>{{ obj.artist }}</td>
+            <td><a class="table_left_column" href="{% url "hobbies:guitar_detailview" pk=obj.id %}">{{ obj.song }}</a></td>
+            <td>{% if obj.my_set is True %}<i class="thumbs up icon"></i>{% endif %}</td>
+
+            <!-- EDIT BUTTON -->
+            <td><a class="ui teal button" href="{% url "hobbies:guitar_updateview" pk=obj.id %}">Edit</a></td>
+            <!-- DELETE BUTTON -->
+            <td>
+              <a class="item" href="{% url "hobbies:guitar_deleteview" pk=obj.id %}">
+              <form action="{% url 'hobbies:guitar_deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui orange button" style="width: 100%" type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </td>
+          </tr>
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+  <!-- ==== STYLE ================ -->
+  <style>
+
+    td a{
+      width:100%;
+      display:block;
+    }
+
+    .table_left_column {
+      /* font-weight: bold;
+      font-size: 1.3em; */
+      text-decoration: none !important;
+      /* padding: 10px;
+      border: 1px solid #009c95;
+      background-color:#009c95;
+      color: white; */
+    }
+
+    #right_attached {
+      background-color: #5d2d7f;
+      position: fixed !important;
+      height: 60px;
+      padding-top: 20px;
+      /* width: 100%; */
+      right: -5px;
+      left: 0px;
+      bottom: 0px;
+      z-index:2000;
+      border-radius: 0px !important;
+    }
+
+  </style>
+
+{% endblock %}

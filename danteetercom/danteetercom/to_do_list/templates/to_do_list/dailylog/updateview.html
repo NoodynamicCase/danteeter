@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}KVA | To Do{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>Edit</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+{% if form.errors %}
+  {{ form.errors }}
+{% endif %}
+
+<div class="row">
+  <form class="ui form" enctype="multipart/form-data" action="" method="POST">
+    {% csrf_token %}
+
+    <!-- CRISPY FORM -->
+        {{ form|crispy }}
+
+    <!-- SUBMIT BUTTON  -->
+
+    <!-- BUTTONS -->
+    {% include "to_do_list/dailylog/snippets/updateview.html" %}
+
+  </form>
+</div>
+
+{% endblock %}

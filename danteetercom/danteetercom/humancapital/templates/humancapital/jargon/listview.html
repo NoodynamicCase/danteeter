@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1> Terms & Definitions</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+
+{% block content %}
+
+<style>
+  td a{width:100%;display:block;}
+</style>
+
+  <!-- NEW CONTACT BUTTON -->
+  <a class="item" href="{% url "humancapital:jargon_createview" %}"><div class="ui massive green button">Add Item</div></a>
+  <br><br>
+
+  <!-- LIST OF TERMS -->
+  <div class="row">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <th>Term</th>
+        <th>Definition</th>
+        <th>Related Topic</th>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td><a href="{{ obj.get_absolute_url }}">{{ obj.word_or_phrase }}</a></td>
+            <td>{{ obj.definition }}</td>
+            <td>{{ obj.relates_to }}</td>
+          </tr>
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+{% endblock %}

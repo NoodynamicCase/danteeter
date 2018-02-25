@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Shopping{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.item }}</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+<!--  BUTTONS ======== -->
+{% include "shopping/snippets/detailview.html" %}
+
+<!-- ===== TABLE ======== -->
+
+<table class="ui very basic celled table">
+
+  <tbody>
+    <tr><td class="horizontal_table">Notes</td><td>{{ object.specifics }}</td></tr>
+    <tr><td class="horizontal_table">Store</td><td>{{ object.store }}</td></tr
+    <tr><td class="horizontal_table">Category</td><td>{{ object.item_category }}</td></tr>
+    <tr><td class="horizontal_table">URL</td><td><a href="{{ object.item_url }}" target="_blank">{{ object.item_url }}</td></tr>
+    <tr><td class="horizontal_table">Picture</td><td>{% if object.picture.url is not Blank %}<img src="{{ object.picture.url }}" style="max-width:500px;">{% endif %}</td></tr>
+    <tr><td class="horizontal_table">Wishlist</td><td>{{ object.wish_list }}</td></tr>
+    <tr><td class="horizontal_table">Favorite</td><td>{{ object.favorite }}</td></tr>
+    <tr><td class="horizontal_table">Ordered</td><td>{{ object.ordered }}</td></tr>
+    <tr><td class="horizontal_table">In List?</td><td>{{ object.in_list }}</td></tr>
+    <!-- TIMESTAMP -->
+    <tr><td class="horizontal_table">Added</td><td>{{ object.timestamp_added }}</td></tr
+    <tr><td class="horizontal_table">Last Updated</td><td>{{ object.timestamp_updated }}</td></tr>
+  </tbody>
+
+</table>
+
+  <br>
+
+<!-- ========================================== -->
+
+{% endblock %}

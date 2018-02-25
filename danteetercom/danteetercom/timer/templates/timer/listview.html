@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Timer{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+
+  <h1>Timer List</h1>
+
+<br><br>
+
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "timer/snippets/listview.html" %}
+
+  <!-- SHOPPING LIST -->
+  <div class="ui centered grid">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <tr class="computer only row">
+          <th>Elapsed</th>
+          <th>Category</th>
+          <th>Task</th>
+          <th>Start</th>
+          <th>Stop</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td>{{ obj.stop_time }}</td>
+            <td>{{ obj.task_category }}</td>
+            <td style="min-width: 300px;"><a class="table_left_column" href="{% url "timer:detailview" pk=obj.id %}">{{ obj.task_description|truncatechars:80 }}</a></td>
+            <td>{{ obj.start_time|date:"M dS, H:i:s" }} </td>
+            <td>{{ obj.stop_time|date:"m/d/y, H:i:s" }}</td>
+
+            <!-- EDIT BUTTON -->
+            <td><a class="ui teal button" href="{% url "timer:updateview" pk=obj.id %}">Edit</a></td>
+            <!-- DELETE BUTTON -->
+            <td>
+              <a class="item" href="{% url "timer:deleteview" pk=obj.id %}">
+              <form action="{% url 'timer:deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui orange button" style="width: 100%" type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </td>
+          </tr>
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+  <!-- ==== STYLE ================ -->
+  <style>
+
+    td a{
+      width:100%;
+      display:block;
+    }
+
+    .table_left_column {
+      /* font-weight: bold; */
+      /* font-size: 1.1em; */
+      text-decoration: none !important;
+      /* padding: 10px;
+      border: 1px solid #009c95;
+      background-color:#009c95;
+      color: white; */
+    }
+
+    #right_attached {
+      background-color: #5d2d7f;
+      position: fixed !important;
+      height: 60px;
+      padding-top: 20px;
+      /* width: 100%; */
+      right: -5px;
+      left: 0px;
+      bottom: 0px;
+      z-index:2000;
+      border-radius: 0px !important;
+    }
+
+  </style>
+
+{% endblock %}

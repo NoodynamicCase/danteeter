@@ -1,0 +1,318 @@
+/* =========== GENERAL ====================================================== */
+
+body {
+  background-color: #FFFFFF;
+}
+
+p {
+  line-height: 30px;
+}
+
+small {
+  font-size: 0.6em;
+}
+
+
+ /* ======= HEADERS ======================== */
+
+h1 {font-size: 3em; font-weight: bolder;}
+h2 {font-size: 2.5em;font-weight: bolder;}
+h3 {font-size: 2em; font-weight: bolder;}
+h4 {font-size: 1.5em; font-weight: bolder;}
+h5 {font-size: 1em; font-weight: bolder;}
+h6 {font-size: 1em; font-weight: bolder;}
+
+
+/* === ANCHORS ============================= */
+a {color: #009c95;}
+/* a:link {color: #009c95;} */
+a:hover {color: #bfbfbf !important;  text-decoration: underline !important;}
+/* a:visited {color: red; } */
+a:active { }
+
+
+
+label {
+  font-weight: bold;
+}
+
+/* ====== CONTAINERS & PAGE SEGMENTS =========== */
+
+.ui.footer.segment {
+  color: white;
+  background-color: black;
+  padding: 50px 0px 150px 0px !important;
+}
+
+/* =========== CLASSES ====================================================== */
+
+
+/* ======= BUTTONS =========*/
+.ui.primary.button {
+  background-color: blue;
+}
+
+.ui.secondary.button {
+  background-color: teal;
+}
+
+/* EDIT */
+.ui.edit.button {
+  background-color: orange;
+  color: white;
+}
+
+/* DELETE */
+.ui.delete.button {
+  background-color: green;
+  color: white;
+}
+
+/* NEW */
+.ui.create.button {
+  background-color: purple;
+  color: white;
+}
+
+/* SAVE */
+.ui.save.button {
+  background-color: teal;
+  color: white;
+  padding: 20px 52% 20px 48%;
+}
+
+#bottom_attached {
+  font-size: 20px !important;
+  position: fixed !important;
+  height: 60px !important;
+  padding-top: 20px !important;
+  right: -5px !important;
+  left: -5px !important;
+  bottom: 0px !important;
+  z-index:2000;
+  border-radius: 0px !important;
+}
+
+.background_color_green {
+  background-color: green;
+}
+
+.table_left_column {
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+/* =========== IDS ========================================================== */
+
+#same_line {
+  white-space:nowrap;
+  display: inline-block;
+}
+
+/*======== BASE MAIN GRID =======================================================*/
+
+.ui.main.text {
+  padding-top:0px !important;
+}
+
+.page_title_row {
+  padding-top: 150px;
+  /* margin: 0px; */
+  /*background-color: #44285b !important;*/
+  /*color: white;*/
+  /* border-bottom: 1px solid black !important; */
+  text-transform: uppercase;
+}
+
+.main_content_container {
+  padding: 50px 0px 100px 0px;
+  background-color: white;
+  /* width: 900px; */
+  /* align-content: center; */
+}
+
+/*===== NAVBAR MENU =============================================================*/
+
+/*Format of the main box surrounding the navbar*/
+.ui.menu {
+    /*background: white !important;*/
+    /*background: black !important;*/
+    border: 0px !important;
+    box-shadow: 0 0 20px 0 rgba(34,36,38,.15) !important;
+    height: 75px !important;
+    /* z-index: 1 !important; */
+    /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15)*/
+}
+
+/*MENU LINK BOXES || Style for the box around the navbar link*/
+.small.header.item {
+  font-size: 1.5em !important!
+  /*border-bottom: solid 2px white !important;*/
+}
+
+/*MENU LINKS || style for navbar links */
+a.ui.small.header.item {
+  background-color: white !important;
+  color: purple;
+}
+
+/*MENU LINKS || style for navbar links when the link is active */
+.ui.small.header.active.item {
+  /*color: black !important;*/
+  background-color: #44285b !important;
+  /*border-bottom: solid 2px #bfbfbf !important;*/
+  font-size:1.071em;
+  font-weight: bold;
+  color: white !important;
+}
+
+/*MENU LINKS || style for navbar links on rollover*/
+a.ui.small.header.item:hover {
+  background-color: #44285b !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+
+
+
+/*============ PICTURES ========================================================*/
+
+/*Formats copmany logo on company/details page*/
+.company_logo_img {
+  max-height: 150px;
+  max-width: 200px
+}
+
+/*Formats name on contact card*/
+.contact_name {
+  font-size:1.25em;
+}
+
+/* Picture style for cards */
+.card_style {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 0px !important;
+}
+
+.image_style {
+  border-radius: 0px !important;
+  border: solid 0px !important;
+  box-shadow: 0px !important;
+}
+
+.title_placard {
+  position:absolute !important;
+  /* z-index: 3 !important; */
+  bottom:0px !important;
+  width:150px !important;
+  height: 25px !important;
+  background-color:black !important;
+  color:white !important;
+  text-align: center !important;
+  padding-top:3px;
+  opacity: 0.75;
+}
+
+.ui.image {
+  border-radius: 0px !important;
+}
+
+/*====== BACKGROUND CARD (KEEP) ========*/
+.ui.card,
+.ui.cards>.card {
+  border-radius: none !important;
+  border: 0px !important;
+  box-shadow: none !important;
+}
+
+/*======== DIMMED CARD IMAGE ==========*/
+.ui.card>:first-child, .ui.cards>.card>:first-child {
+  border-radius: 0px !important;
+  border: 0px !important;
+}
+
+/* ======== ID CLASSES ==================== */
+
+.horizontal_table {
+  font-weight: bold;
+  font-size: 1.1em;
+  /* text-indent: 15px; */
+  vertical-align: top;
+  width: 20%;
+}
+
+/* FIXED BOTTOM BUTTONS ============ */
+#fixed_bottom_button {
+  background-color: #009c95;
+  font-size: 1.2em;
+  color: white;
+  position: fixed !important;
+  height: 60px;
+  padding-top: 20px;
+  width: 100%;
+  right: -5px;
+  left: 0px;
+  bottom: 0px;
+  z-index:2000;
+  border-radius: 0px !important;
+}
+
+#fixed_bottom_delete_button {
+  background-color: black;
+  font-size: 1.2em;
+  color: white;
+  position: fixed !important;
+  height: 60px;
+  padding-top: 20px;
+  right: -5px;
+  bottom: 0px;
+  z-index:2001;
+  border-radius: 0px !important;
+}
+
+#fixed_bottom_back_button {
+  background-color: red;
+  font-size: 1.2em;
+  color: white;
+  position: fixed !important;
+  height: 60px;
+  padding-top: 20px;
+  left: 0px;
+  bottom: 0px;
+  z-index:2002;
+  border-radius: 0px !important;
+}
+
+/* COMPUTER ONLY RIGHT MENU =========== */
+#fixed_right_menu {
+  position: fixed !important;
+  right: -22px;
+  top: 100px;
+  margin: 0px;
+  padding: 0px;
+  /* width:150px; */
+  z-index:2000;
+}
+
+#fixed_right_button {
+  background-color: #009c95;
+  font-size: 1.1em;
+    color: white;
+  height: 75px;
+  padding-top: 27px;
+  width: 75px;
+  z-index:2000;
+  border-radius: 0px !important;
+}
+
+
+
+/*========== BUTTONS ==========================================================*/
+.
+ui.basic.button {
+  /*border-color: 1px solid red !important;*/
+  padding: 10px !important;
+  /*margin: 10px !important;*/
+}

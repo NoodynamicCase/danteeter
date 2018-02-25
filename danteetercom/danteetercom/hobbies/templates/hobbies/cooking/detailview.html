@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Cooking{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.title }}</h1>
+  <br>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!--  BUTTONS ======== -->
+{% include "hobbies/cooking/snippets/detailview.html" %}
+
+<!-- ===== TABLE ======== -->
+<div class="ui centered grid">
+
+  <table class="ui very basic celled collapsable table">
+
+    <!-- BASIC INFO -->
+    <tbody  class="gray_row_spacer">
+      <tr><td class="horizontal_table">URL Link</td><td>
+        <a href="{{ object.URL_link }}" target="_blank">{{ object.URL_link }}</a>
+      </td></tr>
+      <tr><td class="horizontal_table">Course</td><td>{{ object.course }}</td></tr>
+      <tr><td class="horizontal_table">Meat</td><td>{{ object.meat }}</td></tr>
+      <tr><td class="horizontal_table">Ingredients</td><td>{{ object.ingredients }}</td></tr>
+      <tr><td class="horizontal_table">Instructions</td><td>{{ object.instructions }}</td></tr>
+      <tr><td class="horizontal_table">TinyMCE Test</td><td>{{ object.tinymce_test }}</td></tr>
+    </tbody>
+
+  </table>
+
+  <br>
+
+</div>
+
+<!-- ========================================== -->
+
+{% endblock %}

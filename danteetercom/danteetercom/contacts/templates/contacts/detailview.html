@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Contacts{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.first_name }} {{ object.last_name }}
+  <small>{% if object.new is True %} (**New**){% endif %}</small>
+  </h1>
+{% endblock %}
+
+<!-- ================================================ -->
+
+{% block content %}
+
+<!--  BUTTONS ======== -->
+{% include "snippets/detailview.html" %}
+
+<!--  TABLE ================= -->
+
+  <table class="ui very basic celled table">
+    <tbody>
+
+      <tr>
+        <td class="horizontal_table">Reference</td>
+        <td>{{ object.quick_reference }}</td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Email</td>
+        <td>{{ object.email }}
+            <a href="emailto:{{ object.email }}" target="_blank" class="ui basic large right floated button">Email</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Phone</td>
+        <td>{{ object.phone }}
+          <a href="sms:1-{{ object.phone }}" target="_blank" class="ui basic large right floated button">Text</a>
+          <a href="tel:1-{{ object.phone }}" target="_blank" class="ui basic large right floated button">Call</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Notes</td>
+        <td>{{ object.notes }}</td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Connection</td>
+        <td>{{ object.connection_type }} ({{ object.connection_quality }})</td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Last Contact</td>
+        <td>{{ object.last_contacted }}</td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">New</td>
+        <td>{{ object.new }}</td>
+      </tr>
+
+      <!-- TIMESTAMP -->
+      <tr>
+        <td class="horizontal_table">Added</td>
+        <td>{{ object.timestamp_added }}</td>
+      </tr>
+
+      <tr>
+        <td class="horizontal_table">Last Updated</td>
+        <td>{{ object.timestamp_updated }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+
+  <!-- ========================================== -->
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Blog{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1> Blog List</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "snippets/listview.html" %}
+
+<style>
+  td a{width:100%;display:block;}
+</style>
+
+
+  <!-- LIST OF CONTACTS -->
+  <div class="row">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Category</th>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+
+        {% if obj.public_private == "Private" %}
+          <tr class="negative">
+            <td>{{ obj.timestamp_added }}</td>
+            <td><a href="{{ obj.get_absolute_url }}">{{ obj.post_title }}</a></td>
+            <td>{{ obj.post_category }}</td>
+          </tr>
+        {% elif obj.public_private is 'Subscriber' %}
+          <tr class="warning">
+            <td>{{ obj.timestamp_added }}</td>
+            <td><a href="{{ obj.get_absolute_url }}">{{ obj.post_title }}</a></td>
+            <td>{{ obj.post_category }}</td>
+          </tr>
+        {% else %}
+          <tr class="positive">
+            <td>{{ obj.timestamp_added }}</td>
+            <td><a href="{{ obj.get_absolute_url }}">{{ obj.post_title }}</a></td>
+            <td>{{ obj.post_category }}</td>
+          </tr>
+        {% endif %}
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+{% endblock %}

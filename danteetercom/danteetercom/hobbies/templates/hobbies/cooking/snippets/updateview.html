@@ -1,0 +1,17 @@
+<!-- ====== BUTTONS ======== -->
+
+  <!-- BACK -->
+  <a href="{% url "hobbies:cooking_detailview" pk=object.id %}"><div id="fixed_bottom_back_button" class="ui button"><<</div></a>
+
+  <!-- EDIT or SAVE -->
+  <a href="{% url "hobbies:cooking_listview" %}" type="submit" value="Save" style="width:100%; font-size:1.2em;">
+    <button id="fixed_bottom_button" class="ui button">Save</button>
+  </a>
+
+  <!-- DELETE -->
+  <a class="item" href="{% url "hobbies:cooking_deleteview" pk=object.id %}">
+    <form action="{% url 'hobbies:cooking_deleteview' pk=object.id %}" method="POST">
+      {% csrf_token %}
+      <input class="ui button" id="fixed_bottom_delete_button" type="submit" value="Delete" onclick="return deleteItem()"/>
+    </form>
+  </a>

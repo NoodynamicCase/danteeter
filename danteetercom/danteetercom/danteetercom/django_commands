@@ -1,0 +1,175 @@
+-- CREATE FOLDERS --
+mkdir directory_name
+cd directory_name
+
+-- CREATE VIRTUAL ENVIRONMENT ---
+python -m venv myvenv
+myvenv\Scripts\activate
+  -- use this everytime to activate virtual environment
+If scripts disabled:  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+-- INSTALL DJANGO IN VENV ---
+python -m pip install django
+pip install django-allauth
+pip install --upgrade django-crispy-forms
+pip install django-import-export
+pip install djangorestframework
+  - must add "rest_framework" to INSTALLED_APPS
+pip install django-multiselectfield
+-- add 'multiselectfield' to settings.py
+-- add from multiselectfield import MultiSelectField to app models.py
+pip install django-tinymce
+-- add 'tinymce' to settings.py
+-- path('tinymce/', include('tinymce.urls')) to urls.py
+pip install django_dajax
+-- add to settings/my_apps: 'dajaxice','dajax'
+-- manual: https://media.readthedocs.org/pdf/django-dajax/latest/django-dajax.pdf
+pip install Pillow
+-- add models.ImageField(upload_to='uploads/%Y/%m/', null=True, blank=True) to models
+
+-- START PROJECT ---
+django-admin startproject project_name
+cd project_name
+django manage.py collectstatic
+python manage.py migrate
+python manage.py createsuperuser
+
+python manage.py check
+python manage.py makemigrations
+python manage.py migrate
+python mange.py sqlmigrate modelname 0001
+
+python manage.py runserver
+python manage.py shell
+
+================================================================================
+https://djangobook.com/django-models-basic-data-access/
+================================================================================
+
+>>> from books.models import Publisher
+>>> p1 = Publisher(name='Apress', address='2855 Telegraph Avenue',
+...     city='Berkeley', state_province='CA', country='U.S.A.',
+...     website='http://www.apress.com/')
+>>> p1.save()
+>>> p2 = Publisher(name="O'Reilly", address='10 Fawcett St.',
+...     city='Cambridge', state_province='MA', country='U.S.A.',
+...     website='http://www.oreilly.com/')
+>>> p2.save()
+>>> publisher_list = Publisher.objects.all()
+>>> publisher_list
+<QuerySet [<Publisher: Publisher object>, <Publisher: Publisher object>]>
+
+OBJECTS.CREATE == create and saves in one step----------------------
+
+>>> p1 = Publisher.objects.create(name='Apress',
+...     address='2855 Telegraph Avenue',
+...     city='Berkeley', state_province='CA', country='U.S.A.',
+...     website='http://www.apress.com/')
+>>> p2 = Publisher.objects.create(name="O'Reilly",
+...     address='10 Fawcett St.', city='Cambridge',
+...     state_province='MA', country='U.S.A.',
+...     website='http://www.oreilly.com/')
+>>> publisher_list = Publisher.objects.all()
+>>> publisher_list
+<QuerySet [<Publisher: Publisher object>, <Publisher: Publisher object>]>
+
+EDIT ENTRY ------------------------------------------
+>>> p.name = 'GNW Independent Publishing'
+>>> p.save()
+
+FILTERING  ------------------------------------------
+The filter() examples return QuerySet, which you can treat like a list.
+
+    queryset = UserProfile.objects.all().filter(board_member='True')
+    queryset = UserProfile.objects.all().order_by('-graduation_year")
+
+>>> Publisher.objects.filter(name='Apress')
+<QuerySet [<Publisher: Apress>]>
+
+>>> Publisher.objects.filter(country="U.S.A.", state_province="CA")
+<QuerySet [<Publisher: Apress>]>
+
+>>> Publisher.objects.filter(country="U.S.A.", state_province="CA")
+<QuerySet [<Publisher: Apress>]>
+
+startswith and endswith
+
+Sometimes it’s more convenient to fetch only a single object, as opposed to a QuerySet.
+That’s what the get() method is for.
+
+>>> Publisher.objects.get(name="Apress")
+<Publisher: Apress>
+
+Instead of a QuerySet, only a single object is returned. Because of that, a query
+resulting in multiple objects will cause an exception.
+
+A query that returns no objects also causes an exception.
+
+try:
+    p = Publisher.objects.get(name='Apress')
+except Publisher.DoesNotExist:
+    print ("Apress isn't in the database yet.")
+else:
+    print ("Apress is in the database.")
+
+--- ORDERING ----------------------------------------------
+>>> Publisher.objects.order_by("name")
+<QuerySet [<Publisher: Apress>, <Publisher: GNW Independent Publishing>, <Publisher: O'Reilly>]>
+
+>>> Publisher.objects.order_by("state_province", "address")
+<QuerySet [<Publisher: Apress>, <Publisher: O'Reilly>, <Publisher: GNW Independent Publishing>]>
+
+>>> Publisher.objects.order_by("-name")
+<QuerySet [<Publisher: O'Reilly>, <Publisher: GNW Independent Publishing>, <Publisher: Apress>]>
+
+--- CHAINING ----------------------------------------------
+>>> Publisher.objects.filter(country="U.S.A.").order_by("-name")
+<QuerySet [<Publisher: O'Reilly>, <Publisher: Apress>]>
+
+--- SLICING ----------------------------------------------
+>>> Publisher.objects.order_by('name')[0]
+<Publisher: Apress>
+
+>>> Publisher.objects.order_by('name')[0:2]
+>>> Publisher.objects.order_by('-name')[0]
+
+--- ORDERING IN MODEL --------------------------------
+* META * sets the defaul ORDERING --------------
+* SELF * returns the string version of the object that is requested--------
+
+class Publisher(models.Model):
+    name = models.CharField(max_length=30)
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length=60)
+    state_province = models.CharField(max_length=30)
+    country = models.CharField(max_length=50)
+    website = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+
+---- UPDATE ONE ROW -------------------------------------------------
+The update() method works on any QuerySet, which means you can edit multiple records in bulk
+
+>>> Publisher.objects.filter(id=1).update(name='Apress Publishing')
+>>> Publisher.objects.get(name="Apress Inc.").update(name='Apress Publishing')
+
+----- DELETE OBJECT ------------------------------------------------------
+To delete an object from your database, simply call the object’s delete() method:
+
+>>> p = Publisher.objects.get(name="O'Reilly")
+>>> p.delete()
+(1, {'books.Publisher': 1})
+>>> Publisher.objects.all()
+<QuerySet [<Publisher: Apress>, <Publisher: GNW Independent Publishing>]>
+
+>>> Publisher.objects.filter(country='USA').delete()
+>>> Publisher.objects.all().delete()
+
+================================================
+
+{{ articles.count }} -- counts the number of items in articles list
+{{ articles|length }} -- counts the number of items in articles list (more efficient)

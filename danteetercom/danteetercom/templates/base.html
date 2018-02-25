@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+<!-- ==== HEAD ============================================================= -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon.ico' %}" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <script type='text/javascript' src="{% static 'js/main.js' %}"></script>
+    <!-- Controls TinyMCE -->
+    {{ form.media }}
+</head>
+
+<!-- ==== NAVBAR =========================================================== -->
+<body>
+
+  <div class="ui fixed borderless menu">
+
+    <!-- LOGO -->
+    <!-- <a href="{% url "home" %}" class="item" id="menu_link">dan<br>teeter<br>.com</a> -->
+    <a href="{% url "home" %}" class="item" id="logo" style="width: 250px;"><img class="logo"></a>
+
+    <!-- CONTACTS -->
+        <div class="ui simple dropdown item" id="menu_link">Contacts<i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="{% url "contacts:listview" %}" class="item">Contact List</a>
+              <div class="divider"></div>
+              <a href="{% url "contacts:createview" %}" class="item">New Contact</a>
+            </div>
+        </div>
+
+    <!-- OTHER LINKS -->
+
+    <a href="{% url "css_template_basic" %}" class="item" id="menu_link">Template</a>
+    <a href="{% url "timer:listview" %}" class="item" id="menu_link">Timer</a>
+
+    <!-- Blog -->
+        <div class="ui simple dropdown item" id="menu_link">Blog<i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="{% url "blog:listview" %}" class="item">List</a>
+              <a href="{% url "blog:createview" %}" class="item">New Post</a>
+            </div>
+        </div>
+
+    <!-- To Do -->
+        <div class="ui simple dropdown item" id="menu_link">To Do<i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="{% url "to_do_list:tasks_listview" %}" class="item">To Do List</a>
+              <a href="{% url "to_do_list:tasks_createview" %}" class="item">New Task</a>
+              <div class="divider"></div>
+              <a href="{% url "to_do_list:dailylog_listview" %}" class="item">Log</a>
+              <a href="{% url "to_do_list:dailylog_createview" %}" class="item">New Entry</a>
+            </div>
+        </div>
+
+    <!-- Work -->
+        <div class="ui simple dropdown item" id="menu_link">Work<i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="{% url "humancapital:posts_listview" %}" class="item">Posts</a>
+              <a href="{% url "humancapital:posts_createview" %}" class="item">New Post</a>
+              <div class="divider"></div>
+              <a href="{% url "humancapital:jargon_listview" %}" class="item">Terms & Definitions</a>
+              <a href="{% url "humancapital:jargon_createview" %}" class="item">New Term</a>
+              <div class="divider"></div>
+              <a href="{% url "humancapital:sources_listview" %}" class="item">Sources</a>
+              <a href="{% url "humancapital:sources_createview" %}" class="item">New Source</a>
+            </div>
+        </div>
+
+    <!-- SHOPPING -->
+    <div class="ui simple dropdown item" id="menu_link">Shopping<i class="dropdown icon"></i>
+        <div class="menu">
+          <a href="{% url "shopping:createview" %}" class="item"><bold>New Item</bold></a>
+          <div class="divider"></div>
+          <a href="{% url "shopping:grocery_listview" %}" class="item">Groceries</a>
+          <a href="{% url "shopping:store_listview" %}" class="item">Store</a>
+          <a href="{% url "shopping:clothing_listview" %}" class="item">Clothing</a>
+          <div class="divider"></div>
+          <a href="{% url "shopping:wishlist_listview" %}" class="item">Wishlist</a>
+          <a href="{% url "shopping:favorites_listview" %}" class="item">Favorites</a>
+          <div class="divider"></div>
+          <a href="{% url "shopping:ordered_listview" %}" class="item">Ordered</a>
+          <a href="{% url "shopping:archive_listview" %}" class="item">Archived Items</a>
+        </div>
+    </div>
+
+  <!-- HOBBIES -->
+    <div class="ui simple dropdown item" id="menu_link">Hobbies <i class="dropdown icon"></i>
+        <div class="menu">
+          <a href="{% url "hobbies:cooking_listview" %}" class="item">Cooking</a>
+          <a href="{% url "hobbies:guitar_listview" %}" class="item">Guitar</a>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <a class="item" href="#">Link Item</a>
+              <a class="item" href="#">Link Item</a>
+            </div>
+          </div>
+          <a class="item" href="#">Link Item</a>
+        </div>
+    </div>
+
+    <!-- RIGHT MENU -->
+    <div class="right menu" id="email_icon_container">
+      <a class="ui item" id="email_icon" href="{% url "email_me" %}"><i class="big mail icon"></i></a>
+    </div>
+
+  </div>
+
+
+<!-- ==== PAGE CONTENT ===================================================== -->
+
+  <!-- TITLE -->
+  <div class="page_title_row">
+    <div class="ui text container">
+      {% block header %}
+      {% endblock %}
+    </div>
+  </div>
+
+<!-- TEXT CONTAINER -->
+  <div class="main_content_container">
+    <div class="ui doubling stackable text container">
+        {% block content %}
+        {% endblock %}
+    </div>
+  </div>
+
+<!-- FOOTER ============================== -->
+
+  <div class="ui footer segment">
+    <div class="ui stackable inverted divided equal height very relaxed stackable grid" >
+
+      <div class="three wide padded column" style="margin-left:100px">
+        <h4 class="ui inverted header">About</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Our Mission</a>
+          <a href="#" class="item">Contact Us</a>
+          <a href="#" class="item">Legal Disclaimer</a>
+        </div>
+      </div>
+
+      <div class="three wide column">
+        <h4 class="ui inverted header">Information</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Our Mission</a>
+          <a href="#" class="item">Contact Us</a>
+          <a href="#" class="item">Legal Disclaimer</a>
+        </div>
+      </div>
+
+      <div class="seven wide column">
+        <h4 class="ui inverted header">Help Us Improve</h4>
+        <p>This site will only succeed with your support.
+      </div>
+
+    </div>
+  </div>
+
+<!-- ======== STYLE =========== -->
+<style>
+  /* .mail.icon:hover {
+    text-decoration: none;
+    color:red;
+  } */
+
+  /* .email_icon {
+    text-decoration: none;
+    background-color:blue;
+    color: purple;
+  } */
+
+
+/* EMAIL ICON */
+
+    #email_icon {
+      /* color: red; */
+      padding-left: 26px;
+    }
+
+    #email_icon:hover {
+      color: white !important;
+      text-decoration:none !important;
+    }
+
+    #email_icon_container {
+      background-color: white !important;
+    }
+
+    #email_icon_container:hover {
+      background-color: black !important;
+      text-decoration:none !important;
+    }
+
+/* MENU LINKS */
+
+    #menu_link {
+      font-weight:bold;
+      font-size:1.1em;
+      padding-top:40px;
+    }
+
+    #menu_link:hover {
+      color: #FFFFFF !important;
+      background-color: black !important;
+      text-decoration:none !important;
+    }
+
+    #logo {
+      /* background-image: url("static/img/logo_black_letters_png.png") no-repeat; */
+      width: 300px;
+      background-image: url('/static/img/logo_black_letters_png.png');
+      background-repeat: no-repeat;
+      background-size: 200px;
+      background-position: center;
+    }
+
+    #logo:hover {
+      background-image: url('/static/img/logo_white_letters_png.png');
+      /* background-image: url({% static 'img/logo_white_letters_png.png' %}) no-repeat; */
+      background-color: black !important;
+      text-decoration:none !important;
+    }
+
+</style>
+<!-- ======== JAVASCRIPT=========== -->
+<script>
+</script>
+
+
+
+</body>
+
+</html>

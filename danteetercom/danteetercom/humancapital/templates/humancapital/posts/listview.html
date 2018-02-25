@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1> Human Capital</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+
+{% block content %}
+
+<style>
+  td a{width:100%;display:block;}
+</style>
+
+  <!-- NEW CONTACT BUTTON -->
+  <a class="item" href="{% url "humancapital:posts_createview" %}"><div class="ui massive green button">Add Item</div></a>
+  <br><br>
+
+  <!-- LIST OF CONTACTS -->
+  <div class="row">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <th>Topic</th>
+        <th>Title</th>
+        <th>Post</th>
+        <th>Sources</th>
+        <th>Files</th>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+
+          <tr>
+            <td><a href="{% url 'humancapital:posts_detailview' pk=obj.pk %}">{{ obj.post_title }}</a></td>
+            <td>{{ obj.post_topic }}</td>
+            <td>{{ obj.post }}</td>
+            <td>{{ obj.sources }}</td>
+            <td>{{ obj.upload_file }}
+          </tr>
+
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+{% endblock %}

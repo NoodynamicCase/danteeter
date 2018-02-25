@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Contacts{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1> Contacts</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!-- BUTTON -->
+{% include "snippets/listview.html" %}
+
+
+<!-- ======================================================== -->
+<div class="stackable ui grid">
+{% regroup object_list by connection_type as ordered_object_list %}
+
+  {% for connection_type in ordered_object_list %}
+
+  <h3>{{ connection_type.grouper }} <small>({{ connection_type.list|length }})</small></h3>
+
+      {% for obj in connection_type.list %}
+
+        <div class="row" style="padding: 2px; border-top: solid 1px #f1f1f1;">
+
+          <div class="four wide column">
+            <a href="{% url 'contacts:detailview' pk=obj.id %}">{{ obj.last_name }}, {{ obj.first_name }}</a>
+          </div>
+
+          <div class="eight wide computer tablet only column">
+            {{ obj.quick_reference|truncatechars:100 }}
+          </div>
+
+          <div class="two wide computer tablet only column" style="border: none;">
+            <a href="{% url 'contacts:updateview' pk=obj.id %}" class="ui small button">Edit</a>
+          </div>
+
+          <div class="two wide computer tablet only column" style="border: none; padding: 0px;">
+            <a href="{% url "contacts:deleteview" pk=obj.id %}" >
+              <form action="{% url 'contacts:deleteview' pk=obj.id %}" method="POST">
+                {% csrf_token %}
+                <input class="ui small button"  type="submit" value="Delete" onclick="return deleteItem()"/>
+              </form>
+            </a>
+          </div>
+
+        </div>
+
+      {% endfor %}<br><br><br><br>
+  {% endfor %}
+
+</div>
+
+
+{% endblock %}
+===================================================
+
+<!--  TABLE ================================================================= -->
+{% regroup object_list by connection_type as ordered_object_list %}
+
+<table class="ui very basic single line compact table">
+
+{% for connection_type in ordered_object_list %}
+
+  <thead>
+    <th style="padding-top:60px;font-size:1.3em;">{{ connection_type.grouper }}</th>
+    <th></th>
+    <th></th>
+  </thead>
+
+  <tbody>
+  {% for obj in connection_type.list %}
+
+      <tr>
+        <td><a href="{% url 'contacts:detailview' pk=obj.id %}">{{ obj.last_name }}, {{ obj.first_name }}</a></td>
+        <td>{{ obj.quick_reference|truncatechars:20 }}</td>
+        <td>
+          <!-- DELETE -->
+          <a class="item" href="{% url "contacts:deleteview" pk=obj.id %}">
+            <form action="{% url 'contacts:deleteview' pk=obj.id %}" method="POST">
+              {% csrf_token %}
+              <input class="ui right floated small button" type="submit" value="Delete" onclick="return deleteItem()"/>
+            </form>
+          </a>
+          <!-- EDIT -->
+          <a href="{% url 'contacts:updateview' pk=obj.id %}" class="ui right floated small button">Edit</a>
+        </td>
+      </tr>
+
+  {% endfor %}
+
+{% endfor %}
+
+  </tbody>
+</table>
+<!-- ================================================================================ -->

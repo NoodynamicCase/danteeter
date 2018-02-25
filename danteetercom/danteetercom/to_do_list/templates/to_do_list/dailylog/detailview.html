@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | To Do{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>{{ object.task }}</h1>
+  <br>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<!--  BUTTONS ======== -->
+{% include "to_do_list/dailylog/snippets/detailview.html" %}
+
+<a href="{% url "to_do_list:tasks_updateview" pk=object.id %}"><div id="bottom_attached" class="ui edit button">Edit</div></a>
+
+<!-- ===== TABLE ======== -->
+<div class="ui centered grid">
+
+  <table class="ui very basic celled collapsable table">
+
+    <!-- BASIC INFO -->
+    <tbody  class="gray_row_spacer">
+      <tr><td class="horizontal_table">Description</td><td>{{ object.task_specifics }}</td></tr>
+      <tr><td class="horizontal_table">When needed?</td><td>{{ object.task_urgency }} | {{ object.task_importance }}</td></tr>
+      <tr><td class="horizontal_table">Complete?</td><td>{{ object.task_completed }}</td></tr>
+      <tr><td class="horizontal_table">Added</td><td>{{ object.timestamp_added }}</td></tr
+      <tr><td class="horizontal_table">Last Updated</td><td>{{ object.timestamp_updated }}</td></tr>
+    </tbody>
+
+  </table>
+
+  <br>
+
+</div>
+
+<!-- ========================================== -->
+
+{% endblock %}

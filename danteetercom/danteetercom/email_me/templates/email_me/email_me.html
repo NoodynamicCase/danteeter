@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Email Dan{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>Email Me</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+{% block content %}
+
+<div class="row">
+
+<!-- CONFIRMATION MESSAGE -->
+  {% if confirm_message %}
+    <h1><i>{{ title }}</i></h1>
+    <h4>{{ sub_title }}</h4>
+    <p>{{ confirm_message }}</p>
+  {% endif %}
+
+<!-- FORM -->
+  {% if form %}
+    <h4>{{ sub_title }}</h4><br>
+      <form class="ui form" method='POST' action="">
+        {% csrf_token %}
+
+        <label>Topic</label>
+        <div class="five wide field">{{ form.topic }}</div>
+
+        <label>Message</label>
+        <div class="twelve wide field">{{form.comment}}</div>
+
+        <label>Your Name</label>
+        <div class="eight wide field">{{form.name}}</div>
+
+        <label>Your Email</label>
+        <div class="eight wide field">{{form.email_sender }}</div>
+
+        <br>
+
+        <input type='submit' value='Send Message' class="ui blue button" />
+      </form>
+
+  {% endif %}
+
+</div>
+
+{% endblock %}
+
+<!--
+<div class="doubling four column row">
+  <div class="four wide column" style="border: solid black 1px;">
+      <p>This is four across</p>
+    </div>
+</div> -->

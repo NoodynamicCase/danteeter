@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}KVA | Human Capital{% endblock %}
+
+<!-- =============================================== -->
+{% block header %}
+  <h1>Sources</h1>
+{% endblock %}
+<!-- ================================================ -->
+
+
+{% block content %}
+
+<style>
+  td a{width:100%;display:block;}
+</style>
+
+  <!-- NEW CONTACT BUTTON -->
+  <a class="item" href="{% url "humancapital:sources_createview" %}"><div class="ui massive green button">Add Item</div></a>
+  <br><br>
+
+  <!-- LIST OF TERMS -->
+  <div class="row">
+    <table class="ui very basic collapsing table" >
+
+      <!-- TABLE HEAD -->
+      <thead>
+        <th>Title</th>
+        <th>Topic</th>
+        <th>Author(s)</th>
+      </thead>
+
+      <!-- TABLE BODY -->
+      <tbody >
+      {% for obj in object_list %}
+          <tr>
+            <td><a href="{% url "humancapital:sources_detailview" pk=obj.id %}">{{ obj.source_title }}</a></td>
+            <td>{{ obj.topic }}</td>
+            {% if obj.authors is not Blank %}<td>{{ obj.authors }}</td>{% else %}<td style="text-align:center;">--</td>{% endif %}
+          </tr>
+      {% endfor %}
+      </tbody>
+
+  </table>
+  </div>
+
+{% endblock %}
